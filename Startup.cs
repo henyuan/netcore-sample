@@ -15,6 +15,8 @@ namespace sample
         public void Configure(IApplicationBuilder app)
         {
             app.UseStaticFiles();
+            app.UseStatusCodePagesWithReExecute("/errors/{0}");
+            app.UseExceptionHandler("/errors/{0}");
             app.UseMvc();
         }
     }
