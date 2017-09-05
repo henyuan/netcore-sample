@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using sample.Models;
 
 namespace sample.Controllers
 {
@@ -10,6 +11,12 @@ namespace sample.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost("/form")]
+        [ValidateAntiForgeryToken]
+        public IActionResult createUser(User user)
+        {
+            return Ok(user);
         }
     }
 }
